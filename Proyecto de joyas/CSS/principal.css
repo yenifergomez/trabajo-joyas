@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
+	body{
+		background: url(/IMG/foro\ principal.png);
+		background-size: 100vw 100vh; /*para ajustar el fondo*/
+		background-repeat: no-repeat;
+	
+	}
+
+	
+	.capa{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0,0,0,0.6);
+		z-index: -1;
+		top: 0;
+		left: 0;
+	}
+	/*COSAS MENU LATERAL*/
+	.header{
+		width: 100%;
+		height: 70px;
+		position: fixed; /*para que la navegacion quede ahi mientas el usuario va bajando*/
+		top: 0;
+		left: 0;
+	}
+	.container{/*para ajustar la barra de navegacion*/
+		width: 95%;
+		max-width: 3000px;/*es para ponerr que distancia uno quiere entre el menu*/
+		margin: auto;
+	}
+	.container .btn-menu, .logo{
+		float: left;
+		line-height:100px;
+	}
+	.container .btn-menu label{ /*el color del menu*/
+		color: #fff;
+		font-size: 25px;
+		cursor: pointer; /*para que cuando pase el cuersor se haga un manito*/
+	}
+	.logo h1{
+		color: #fff;
+		font-weight: 400;
+		font-size: 22px;
+		margin-left: 10px;
+	}
+	.container .menu{
+		float: right; /**para que quede a la derevha*/
+		line-height: 100px;
+		right: 100px;
+	}
+	.container .menu a{
+		display: inline-block;
+		padding: 15px;
+		line-height: normal;
+		text-decoration: none;
+		color: #fff;
+		transition: all 0.3s ease;
+		border-bottom: 2px solid transparent;
+		font-size: 15px;
+		margin-right: 5px;
+	}
+	.container .menu a:hover{ /*el efecto que parece debajo de la barra de navegacion*/
+		border-bottom: 2px solid #ffffff; /*color del efecto que engte caso es una raya*/
+		padding-bottom: 5px; /*distancia en la queda la raya de las letras y la*/
+	}
+	/*Fin de Estilos para el encabezado*/
+
+	/*Menù lateral*/
+	#btn-menu{
+		display: none;
+	}
+	.container-menu{
+		position: absolute;
+		background: rgba(0,0,0,0.5); /*es el color que quiero que se ponga cuando el menu se active*/
+		width: 100%; /*para que se expanda en toda la pantalla*/
+		height: 100vh; /*para que se expanda en toda la pantalla*/
+		top: 0;
+		left: 0;
+		transition: all 500ms ease; /*para que se vea lindo*/
+		opacity: 0;
+		visibility: hidden;
+	}
+	#btn-menu:checked ~ .container-menu{
+		opacity: 1;
+		visibility: visible;
+	}
+	.cont-menu{
+		max-width: 450px; /*para el hancho de la barra lateral*/
+		background: #ffffff; /*color de fondo del menu lateral*/
+		height: 100vh;
+		position: relative;
+		transition: all 500ms ease;
+		transform: translateX(-100%);
+	}
+	#btn-menu:checked ~ .container-menu .cont-menu{
+		transform: translateX(0%); /*para que se pueda trasladar*/
+	}
+	.cont-menu nav{
+		transform: translateY(10%); /*para que pendientes quede debajo de la x*/
+	}
+	.cont-menu nav a{ /**/
+		display: block;
+		text-decoration: none;
+		padding: 20px;
+		color: #000000; /*color de las letras */
+		border-left: 5px solid transparent;
+		transition: all 400ms ease; /*transsicion de cuando baja el cursor y se vea bonito*/
+	}
+	.cont-menu nav a:hover{
+		border-left: 5px solid #000000;
+		background: #ffffff;
+	}
+	.cont-menu label{
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		color: #fc1010;
+		cursor: pointer;
+		font-size: 18px;
+	}
+	/*Fin de Menù lateral*/
+
+	/*donde dice tu joyeria de confianza*/
+	.titulo{
+		background: #ffffff;
+		text-align: center;
+		font-size: 25px; /*lo grande de la letra*/
+		height: 150px;
+		color:  #efb810;
+
+	}
+
+	/*tarjetas de aretes*/
+.container-card{
+	width: 100%;
+	display: flex;
+	max-width: 10000px; /*hancho de las cajas*/
+	margin: auto;
+	background: #ffffff;
+}
+/*titulo donde dice lo mejor en accesorios*/
+.title-cards{
+    
+	padding: 20px;
+	text-align: center;
+	color:  #000000;
+	background:#fff;
+}
+.card{
+	width: 100%;
+	margin: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	background:#ffffff; /*color de la parte de adentro de la descripcion*/ 
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+	transition: all 400ms ease-out;
+	cursor: default;
+}
+.card:hover{
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	transform: translateY(-3%); /*es para cuando uno pasa el cursor sobresalga*/
+}
+
+/*tamaño de imagen*/
+.card img{
+	width: 100%;
+	height: 500px;
+}
+/*tamaño y alineacion del texto*/
+.card .contenido-card{
+	padding: 15px;
+	text-align: center;
+}
+.card .contenido-card h3{
+	margin-bottom: 15px;
+	color: #7a7a7a;
+}
+.card .contenido-card p{
+	line-height: 1.8;
+	color: #6a6a6a;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.card .contenido-card a{
+	display: inline-block;
+	padding: 10px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #efb810;
+	border: 1px solid #efb810;
+	border-radius: 4px;
+	transition: all 400ms ease;
+	margin-bottom: 5px;
+}
+.card .contenido-card a:hover{
+	background: #efb710da;
+	color: #fff;
+}
+
+
+/*Fin tarjeta de aretes*/
+
+/*foto de seccion parte 2*/
+.parte2{
+	background: url(/IMG/Los\ mejores\ diseños\ para\ ti.png);
+	background-size: 100vw 100vh; /*para ajustar el fondo*/
+	background-repeat: no-repeat;
+	height: 675px;/*largo de la foto*/
+	color: #ffffff;
+	font-size: 45px;
+	position: relative;
+	
+}
+/*fin de seccion parte 2*/
+
+
+/*foto de seccion parte 3*/
+.parte3{
+	background: url(https://www.joieriaorfi.es/img/cms/pendientes.jpg);
+	background-size: 100vw 100vh; /*para ajustar el fondo*/
+	background-repeat: no-repeat;
+	height: 750px; /*largo de la foto*/
+	color: #ffffff;
+	font-size: 53px;
+	position: relative;
+	
+}
+/*fin de seccion parte 3*/
+
+/*Nosotros*/
+.about .row{
+    display: flex;
+    align-items: center;
+	background: #ffffff;
+  
+}
+
+.about .row .image{
+    flex:1 1 35rem;
+}
+
+.about .row .image img{
+    width: 80%; /*medida de la imagen*/
+}
+.about .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.about .row .content h1{
+    font-size: 3rem;
+    color:#efb810;
+}
+
+.about .row .content p{
+    font-size: 2rem;
+    color:#000000;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+/*fin de nosotros*/
+
+
+/*OPINIONES*/
+/*color de la seccion*/
+.about {
+    background: #ffffffdf;
+    
+}
+
+.title{
+	color: #000000;
+	font-size: 50px; /*tamaño de la letra*/
+	text-align: center;
+}
+
+.box-container2{
+    display: flex;
+    justify-content: center;
+    padding-top: 170px;
+    
+}
+
+.box-container2 .box {
+    width: 350px; /*hancho y largo en donde va el comentario*/
+    padding-bottom: 50px;
+    text-align: center;
+    background: #ffffff; /*color de donde va el comentario*/
+    margin: 20px 20px;
+}
+ /*ta,añp de la imagen*/
+.box-container2 .box img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -50px;
+    
+}
+
+.box-container2 .box h3 {
+    font-size: 20px;
+    color: #000000;
+    padding-top: 10px;
+}
+
+.box-container2 .box p {
+
+    font-size: 18px;
+    color: rgb(1, 0, 0);
+    padding: 0;
+}
+
+/*FIN IPINIONES*/
+
+/*contactanos*/
+.abous .row{
+    display: flex;
+    align-items: center;
+	background: #ffffff;
+  
+}
+
+.abous .row .image{
+    flex:1 1 35rem;
+}
+
+.abous .row .image img{
+    width: 80%; /*medida de la imagen*/
+}
+.abous .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+	position: center;
+}
+
+.abous .row .content h1{
+    font-size: 3rem;
+    color:#efb810;
+}
+
+.abou .row .content p{
+    font-size: 2rem;
+    color:#000000;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+.left{
+	background: url("https://i.pinimg.com/564x/a1/2c/5d/a12c5d643a6113ee0b990cb1549b9ea8.jpg") ;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #efb810; /*rayita que va abajo de la mayoria de las secciones*/
+}
+
+/*cajas de texto*/
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+/*boton que dice enviar*/
+.btn{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color:  #efb810;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+ /*efecto hover del boton que dice enviar*/
+.btn:hover{
+    background-color: #efb710b0;
+}
+
+/*borde de laas cajas de texto*/
+.field:focus{
+    border: 2px solid rgba(0, 0, 0, 0.47);
+    background-color: #fff;
+}
+
+
+/*fin contactanos*/
+
+
+
+/*footer*/
+.container4{
+	max-width: 1170px;
+	margin:auto;
+}
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4 {
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col p{
+	color: #bbbbbb;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #efb810;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+
+
+	
